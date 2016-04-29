@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script>
+      $.get("http://steamcommunity.com/stats/380220/leaderboards/1193570/?xml=1&end=100").done(parseLeaderboards);
+      function parseLeaderboards(e, data){
+        var apiKey = "1EE79C4C11741A5A17F948F3B52BEF58";
+        var profileRequest = "http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=" + key + "&steamids="
+        var steamids = "";
+        var $lb = $(data);
+        $lb.find("steamid").each(function(){
+          steamids += $(this).text() + ",";
+        });
+      }
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>
